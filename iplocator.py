@@ -14,6 +14,9 @@ if len(sys.argv) > 1:
 
         result = json.loads(response)
 
+        if result["zip"] == "":
+            result["zip"] = "Unknown"
+
         print(f"IP: {result['query']}\n\nCountry: {result['country']}\nCity: {result['city']}\nPostal Code: {result['zip']}\nTimezone: {result['timezone']}\nISP: {result['isp']}\nLatitude: {result['lat']}\nLongitude: {result['lon']}")
 
     except:
